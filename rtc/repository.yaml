@@ -1,0 +1,15 @@
+WebCamera2:
+  description : Web Camera RTC for RTM2.0
+  git : https://github.com/rsdlab/WebCamera2.git
+  hash : 7edb5183f755584c6aaba07b16bd88b2793efb02
+  repo_name : WebCamera2
+SingleArUco2:
+  description : Pose Estimation RTC with ArUco marker for RTM2.0
+  git : https://github.com/rsdlab/SingleArUco2.git
+  hash : 47d52bb7bbd5b3b0d08ad0373cc5e51052c5ad5d
+  repo_name : SingleArUco2
+ImageViewer2:
+  description : Image viewer RTC for RTM2.0
+  git : https://github.com/rsdlab/ImageViewer2.git
+  hash : 85d721e496836cbe45f141c2fd454951170373f6
+  repo_name : ImageViewer2
