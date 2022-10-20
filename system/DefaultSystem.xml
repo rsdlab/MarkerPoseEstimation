@@ -1,0 +1,116 @@
+<?xml version="1.0" ?>
+<rts:RtsProfile xmlns:rts="http://www.openrtp.org/namespaces/rts" xmlns:rtsExt="http://www.openrtp.org/namespaces/rts_ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" rts:id="RTSystem:rsdlab:marker:1.0" rts:abstract="test" rts:creationDate="2022-10-21T01:31:19" rts:updateDate="2022-10-21T01:31:19" rts:version="0.2">
+    <rts:Components xsi:type="rtsExt:component_ext" rts:id="RTC:Robot System Design Laboratory, Meijo University:ImageProcessing:SingleArUco2:1.0.0" rts:pathUri="localhost:2809/SingleArUco20.rtc" rts:activeConfigurationSet="default" rts:instanceName="SingleArUco20" rts:compositeType="None" rts:isRequired="true" rtsExt:visible="true">
+        <rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="InImage" rtsExt:visible="true"/>
+        <rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="OutImage" rtsExt:visible="true"/>
+        <rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="ArUco2DPose" rtsExt:visible="true"/>
+        <rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="ArUco3DPose" rtsExt:visible="true"/>
+        <rts:ConfigurationSets rts:id="default">
+            <rts:ConfigurationData rts:name="Dictionary" rts:data="ORIGINAL"/>
+            <rts:ConfigurationData rts:name="MarkerSize" rts:data="0.05"/>
+        </rts:ConfigurationSets>
+        <rts:ConfigurationSets rts:id="__widget__">
+            <rts:ConfigurationData rts:name="Dictionary" rts:data="radio"/>
+            <rts:ConfigurationData rts:name="MarkerSize" rts:data="text"/>
+        </rts:ConfigurationSets>
+        <rts:ConfigurationSets rts:id="__constraints__">
+            <rts:ConfigurationData rts:name="Dictionary" rts:data="(ORIGINAL,4x4_50,4x4_100,4x4_250,4x4_1000,5x5_50,5x5_100,5x5_250,5x5_1000,6x6_50,6x6_100,6x6_250,6x6_1000,7x7_50,7x7_100,7x7_250,7x7_1000)"/>
+        </rts:ConfigurationSets>
+        <rts:ConfigurationSets rts:id="__type__">
+            <rts:ConfigurationData rts:name="Dictionary" rts:data="string"/>
+            <rts:ConfigurationData rts:name="MarkerSize" rts:data="double"/>
+        </rts:ConfigurationSets>
+        <rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="0" rts:kind="PERIODIC" rts:rate="1000.0"/>
+        <rtsExt:Location rtsExt:x="0" rtsExt:y="0" rtsExt:height="0" rtsExt:width="0" rtsExt:direction="down"/>
+        <rtsExt:Properties rtsExt:name="IOR" rtsExt:value="IOR:010000003500000049444c3a6f70656e72746d2e616973742e676f2e6a702f4f70656e52544d2f44617461466c6f77436f6d706f6e656e743a312e3000000000010000000000000064000000010102000e0000003139322e3136382e31302e313100fa0a0e000000fe8d7751630000199f000000000000000200000000000000080000000100000000545441010000001c00000001000000010001000100000001000105090101000100000009010100"/>
+    </rts:Components>
+    <rts:Components xsi:type="rtsExt:component_ext" rts:id="RTC:Kenichi Ohara, Meijo University:ImageProcessing:WebCamera2:1.0.0" rts:pathUri="localhost:2809/WebCamera20.rtc" rts:activeConfigurationSet="default" rts:instanceName="WebCamera20" rts:compositeType="None" rts:isRequired="true" rtsExt:visible="true">
+        <rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="CameraImage" rtsExt:visible="true"/>
+        <rts:ServicePorts xsi:type="rtsExt:serviceport_ext" rts:name="CameraCaptureService"/>
+        <rts:ConfigurationSets rts:id="default">
+            <rts:ConfigurationData rts:name="camera_id" rts:data="0"/>
+            <rts:ConfigurationData rts:name="output_color_format" rts:data="RGB"/>
+            <rts:ConfigurationData rts:name="camera_param_filename" rts:data="camera.yml"/>
+            <rts:ConfigurationData rts:name="undistortion_flag" rts:data="false"/>
+            <rts:ConfigurationData rts:name="cap_continuous_flag" rts:data="true"/>
+            <rts:ConfigurationData rts:name="compression_ratio" rts:data="75"/>
+            <rts:ConfigurationData rts:name="frame_width" rts:data="640"/>
+            <rts:ConfigurationData rts:name="frame_height" rts:data="480"/>
+        </rts:ConfigurationSets>
+        <rts:ConfigurationSets rts:id="__widget__">
+            <rts:ConfigurationData rts:name="camera_id" rts:data="text"/>
+            <rts:ConfigurationData rts:name="output_color_format" rts:data="radio"/>
+            <rts:ConfigurationData rts:name="camera_param_filename" rts:data="text"/>
+            <rts:ConfigurationData rts:name="undistortion_flag" rts:data="radio"/>
+            <rts:ConfigurationData rts:name="cap_continuous_flag" rts:data="radio"/>
+            <rts:ConfigurationData rts:name="compression_ratio" rts:data="slider.1"/>
+            <rts:ConfigurationData rts:name="frame_width" rts:data="text"/>
+            <rts:ConfigurationData rts:name="frame_height" rts:data="text"/>
+        </rts:ConfigurationSets>
+        <rts:ConfigurationSets rts:id="__constraints__">
+            <rts:ConfigurationData rts:name="output_color_format" rts:data="(RGB,GRAY,JPEG,PNG)"/>
+            <rts:ConfigurationData rts:name="undistortion_flag" rts:data="(true,false)"/>
+            <rts:ConfigurationData rts:name="cap_continuous_flag" rts:data="(true,false)"/>
+            <rts:ConfigurationData rts:name="compression_ratio" rts:data="0&lt;=x&lt;=100"/>
+        </rts:ConfigurationSets>
+        <rts:ConfigurationSets rts:id="__type__">
+            <rts:ConfigurationData rts:name="camera_id" rts:data="int"/>
+            <rts:ConfigurationData rts:name="output_color_format" rts:data="string"/>
+            <rts:ConfigurationData rts:name="camera_param_filename" rts:data="string"/>
+            <rts:ConfigurationData rts:name="undistortion_flag" rts:data="string"/>
+            <rts:ConfigurationData rts:name="cap_continuous_flag" rts:data="string"/>
+            <rts:ConfigurationData rts:name="compression_ratio" rts:data="int"/>
+            <rts:ConfigurationData rts:name="frame_width" rts:data="int"/>
+            <rts:ConfigurationData rts:name="frame_height" rts:data="int"/>
+        </rts:ConfigurationSets>
+        <rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="0" rts:kind="PERIODIC" rts:rate="1000.0"/>
+        <rtsExt:Location rtsExt:x="0" rtsExt:y="0" rtsExt:height="0" rtsExt:width="0" rtsExt:direction="down"/>
+        <rtsExt:Properties rtsExt:name="IOR" rtsExt:value="IOR:010000003500000049444c3a6f70656e72746d2e616973742e676f2e6a702f4f70656e52544d2f44617461466c6f77436f6d706f6e656e743a312e3000000000010000000000000064000000010102000e0000003139322e3136382e31302e313100fa0a0e000000fe8d7751630000199f000000000700000200000000000000080000000100000000545441010000001c00000001000000010001000100000001000105090101000100000009010100"/>
+    </rts:Components>
+    <rts:Components xsi:type="rtsExt:component_ext" rts:id="RTC:Kenichi Ohara, Meijo University:ImageProcessing:ImageViewer2:1.0.0" rts:pathUri="localhost:2809/ImageViewer20.rtc" rts:activeConfigurationSet="default" rts:instanceName="ImageViewer20" rts:compositeType="None" rts:isRequired="true" rtsExt:visible="true">
+        <rts:DataPorts xsi:type="rtsExt:dataport_ext" rts:name="Image" rtsExt:visible="true"/>
+        <rts:ServicePorts xsi:type="rtsExt:serviceport_ext" rts:name="CameraCaptureService"/>
+        <rts:ConfigurationSets rts:id="default">
+            <rts:ConfigurationData rts:name="capture_frame_num" rts:data="0"/>
+        </rts:ConfigurationSets>
+        <rts:ConfigurationSets rts:id="__widget__">
+            <rts:ConfigurationData rts:name="capture_frame_num" rts:data="text"/>
+        </rts:ConfigurationSets>
+        <rts:ConfigurationSets rts:id="__type__">
+            <rts:ConfigurationData rts:name="capture_frame_num" rts:data="int"/>
+        </rts:ConfigurationSets>
+        <rts:ExecutionContexts xsi:type="rtsExt:execution_context_ext" rts:id="0" rts:kind="PERIODIC" rts:rate="1000.0"/>
+        <rtsExt:Location rtsExt:x="0" rtsExt:y="0" rtsExt:height="0" rtsExt:width="0" rtsExt:direction="down"/>
+        <rtsExt:Properties rtsExt:name="IOR" rtsExt:value="IOR:010000003500000049444c3a6f70656e72746d2e616973742e676f2e6a702f4f70656e52544d2f44617461466c6f77436f6d706f6e656e743a312e3000000000010000000000000064000000010102000e0000003139322e3136382e31302e313100fa0a0e000000fe8d7751630000199f000000000c00000200000000000000080000000100000000545441010000001c00000001000000010001000100000001000105090101000100000009010100"/>
+    </rts:Components>
+    <rts:DataPortConnectors xsi:type="rtsExt:dataport_connector_ext" rts:connectorId="cbf34e95-bd4d-4224-b1f6-0c5e0da7aa1f" rts:name="OutImageImage" rts:dataType="IDL:Img/TimedCameraImage:1.0" rts:interfaceType="corba_cdr" rts:dataflowType="push" rts:subscriptionType="new">
+        <rts:sourceDataPort rts:componentId="RTC:Robot System Design Laboratory, Meijo University:ImageProcessing:SingleArUco2:1.0.0" rts:instanceName="SingleArUco20" xsi:type="rtsExt:target_port_ext" rts:portName="SingleArUco20.OutImage">
+            <rtsExt:Properties rtsExt:name="COMPONENT_PATH_ID" rtsExt:value="localhost:2809/SingleArUco20.rtc"/>
+        </rts:sourceDataPort>
+        <rts:targetDataPort rts:componentId="RTC:Kenichi Ohara, Meijo University:ImageProcessing:ImageViewer2:1.0.0" rts:instanceName="ImageViewer20" xsi:type="rtsExt:target_port_ext" rts:portName="ImageViewer20.Image">
+            <rtsExt:Properties rtsExt:name="COMPONENT_PATH_ID" rtsExt:value="localhost:2809/manager_cpp.mgr/ImageViewer20.rtc"/>
+        </rts:targetDataPort>
+        <rtsExt:Properties rtsExt:name="dataport.dataflow_type" rtsExt:value="push"/>
+        <rtsExt:Properties rtsExt:name="dataport.interface_type" rtsExt:value="corba_cdr"/>
+        <rtsExt:Properties rtsExt:name="dataport.subscription_type" rtsExt:value="new"/>
+        <rtsExt:Properties rtsExt:name="dataport.data_type" rtsExt:value="IDL:Img/TimedCameraImage:1.0"/>
+        <rtsExt:Properties rtsExt:name="dataport.serializer.cdr.endian" rtsExt:value="little,big"/>
+        <rtsExt:Properties rtsExt:name="dataport.outport"/>
+        <rtsExt:Properties rtsExt:name="dataport.inport"/>
+    </rts:DataPortConnectors>
+    <rts:DataPortConnectors xsi:type="rtsExt:dataport_connector_ext" rts:connectorId="c7faf2f2-7e1c-4654-8ca5-18bbea2fe6b7" rts:name="CameraImageInImage" rts:dataType="IDL:Img/TimedCameraImage:1.0" rts:interfaceType="corba_cdr" rts:dataflowType="push" rts:subscriptionType="new">
+        <rts:sourceDataPort rts:componentId="RTC:Kenichi Ohara, Meijo University:ImageProcessing:WebCamera2:1.0.0" rts:instanceName="WebCamera20" xsi:type="rtsExt:target_port_ext" rts:portName="WebCamera20.CameraImage">
+            <rtsExt:Properties rtsExt:name="COMPONENT_PATH_ID" rtsExt:value="localhost:2809/WebCamera20.rtc"/>
+        </rts:sourceDataPort>
+        <rts:targetDataPort rts:componentId="RTC:Robot System Design Laboratory, Meijo University:ImageProcessing:SingleArUco2:1.0.0" rts:instanceName="SingleArUco20" xsi:type="rtsExt:target_port_ext" rts:portName="SingleArUco20.InImage">
+            <rtsExt:Properties rtsExt:name="COMPONENT_PATH_ID" rtsExt:value="localhost:2809/manager_cpp.mgr/SingleArUco20.rtc"/>
+        </rts:targetDataPort>
+        <rtsExt:Properties rtsExt:name="dataport.dataflow_type" rtsExt:value="push"/>
+        <rtsExt:Properties rtsExt:name="dataport.interface_type" rtsExt:value="corba_cdr"/>
+        <rtsExt:Properties rtsExt:name="dataport.subscription_type" rtsExt:value="new"/>
+        <rtsExt:Properties rtsExt:name="dataport.data_type" rtsExt:value="IDL:Img/TimedCameraImage:1.0"/>
+        <rtsExt:Properties rtsExt:name="dataport.serializer.cdr.endian" rtsExt:value="little,big"/>
+        <rtsExt:Properties rtsExt:name="dataport.outport"/>
+        <rtsExt:Properties rtsExt:name="dataport.inport"/>
+    </rts:DataPortConnectors>
+</rts:RtsProfile>
