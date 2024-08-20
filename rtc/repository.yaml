@@ -1,7 +1,8 @@
 WebCamera2:
   description : Web Camera RTC for RTM2.0
   git : https://github.com/rsdlab/WebCamera2.git
-  hash : 7edb5183f755584c6aaba07b16bd88b2793efb02
+  hash : 79927c7d42f8e30bb78c16f71d2012934d79df71
+  #hash : 7edb5183f755584c6aaba07b16bd88b2793efb02
   repo_name : WebCamera2
 SingleArUco2:
   description : Pose Estimation RTC with ArUco marker for RTM2.0
